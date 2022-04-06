@@ -1,0 +1,66 @@
+.box {
+  background-image: url(https://placeimg.com/640/480/animals);
+  background-size: cover;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 1s linear;
+}
+.box:hover .box_img {
+  transform: scale(1.2);
+}
+.box:hover .expand {
+  transform: translateY(0);
+  background-color: rgba(255, 255, 255, 0.75);
+  color: black;
+}
+.box.slideup:hover {
+  transform: translate(0px, -20px);
+}
+.box_link {
+  color: #fff;
+  text-decoration: none;
+}
+.box_link:hover {
+  color: #fff;
+}
+.box_overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  border-radius: 10px;
+}
+.box_content {
+  min-height: 420px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+.box_content.expand {
+  transform: translateY(80%);
+  transition: all 0.5s ease-in-out;
+}
+@media screen and (max-width: 991px) {
+  .box_content.expand {
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 991px) {
+  .box_content {
+    min-height: 0;
+  }
+}
+.box_wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.box_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.2s ease-in;
+}
